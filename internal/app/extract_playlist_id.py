@@ -1,4 +1,4 @@
-def extract_playlist_id_from_file(filename='playlist_id.txt'):
+def extract_playlist_id_from_file(filename='data/playlist_id.txt'):
     try:
         with open(filename, 'r') as file:
             lines = file.readlines()  # Читаем все строки файла

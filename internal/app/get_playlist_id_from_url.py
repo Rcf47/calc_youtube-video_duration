@@ -8,7 +8,7 @@ def get_playlist_id_from_url(url):
     return query_params.get('list', [None])[0]
 
 
-def save_playlist_id_to_file(playlist_id, url, filename="playlist_id.txt"):
+def save_playlist_id_to_file(playlist_id, url, filename="data/playlist_id.txt"):
     with open(filename, "a") as file:
         file.write(url + ": " + playlist_id + "\n")
 
