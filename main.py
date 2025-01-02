@@ -2,9 +2,9 @@ import os
 import requests
 import isodate
 from dotenv import load_dotenv
-from extract_playlist_id import extract_playlist_id_from_file
-from get_playlist_id_from_url import get_playlist_id_from_url, save_playlist_id_to_file
-from check_cache import check_cache
+from internal.app.extract_playlist_id import extract_playlist_id_from_file
+from internal.app.get_playlist_id_from_url import get_playlist_id_from_url, save_playlist_id_to_file
+from internal.app.check_cache import check_cache
 
 load_dotenv()
 
@@ -61,7 +61,7 @@ def main():
     string_for_cache = f'Общее время просмотра плейлиста: {int(hours)} часов, {int(minutes)} минут, {int(seconds)} секунд.'
     print(string_for_cache)
 
-    with open("time_cache.txt", "a") as file:
+    with open("data/time_cache.txt", "a") as file:
         file.write(url + ": " + string_for_cache + "\n")
 
 if __name__ == "__main__":
